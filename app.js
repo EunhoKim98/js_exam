@@ -12,9 +12,8 @@ const ejs = require('ejs');
 const favicon = require('serve-favicon')
 const connection = require('./db/connection');
 
-const HTTP_PORT = 8080;
+const HTTP_PORT = 3000;
 
-const boardRouter = require('./routers/boardRouter');
 const libraryRouter = require('./routers/library')
 
 const hbs = require('hbs');
@@ -40,7 +39,6 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
-app.use('/main_board', boardRouter);
 app.use('/library', libraryRouter);
 
 app.use((req, res, next) => {
