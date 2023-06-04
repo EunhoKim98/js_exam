@@ -102,7 +102,7 @@
             <div class="col-12">
               <label for="Email" class="form-label">Email</label>
               <div class="input-group has-validation">
-              <input type="email" name="Email" class="form-control" id="email" value size="20" placeholder="name@example.com" required>
+              <input type="email" name="email" class="form-control" id="email" value="" size="20" placeholder="name@example.com" required>
               </div>
               <p id="result">&nbsp;</p>
             </div>
@@ -134,8 +134,11 @@
 
             <!--주소-->
             <div class="col-12">
-              <label for="address" class="form-label">Address <span class="text-muted">(Optional)</span></label>
-              <input type="text" id="address" class="form-control" name="Address" placeholder="">
+              <label for="address" class="form-label">Address <span class="text-muted"></span></label>
+              <input type="text" id="address" class="form-control" name="address" placeholder="" required="">
+              <div class="invalid-feedback">
+                  Your name is required.
+                </div>
             </div>
 
             <hr class="my-4">

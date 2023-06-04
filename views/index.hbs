@@ -133,7 +133,12 @@
                 <a href="/login" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Login</a>
                 <a href="/register" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Register</a>
             </p><br>
-            
+            {{#if email}}
+                <script>
+                    sessionStorage.setItem('{{email}}', 'loggedIn');
+                    alert('Login Success');
+                </script>
+            {{/if}}
         </main>
 
         <footer class="mt-auto text-white-50">
