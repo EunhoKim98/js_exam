@@ -1,0 +1,150 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library_SIGN_UP</title>
+    <link rel="stylesheet" href="/static/css/min.css">
+   
+<meta name="theme-color" content="#712cf9">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .container {
+        max-width: 960px;
+      }
+    </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-xl navbar-dark bg-dark" aria-label="Sixth navbar example">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">AITON Library</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExample06">
+            <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/login">Login</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/register">Register</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+        <div class="py-5 text-center">
+          <img class="mb-4" src="../static/images/gwnu.png" alt="" >
+          
+        </div>
+        <div class="row g-5" style="margin-left:25%">
+        <div class="col-md-7 col-lg-8">
+
+        <form class="needs-validation" name="regiform" onsubmit="return sendit()" action="/register" method="post">
+            
+            <!--이메일-->
+            <div class="col-12">
+              <label for="Email" class="form-label">Email</label>
+              <div class="input-group has-validation">
+              <input type="email" name="Email" class="form-control" id="email" value size="20" placeholder="name@example.com" required>
+              </div>
+              <p id="result">&nbsp;</p>
+            </div>
+          
+
+            <!--비밀번호-->
+            <div class="col-12">
+              <label for="Password" class="form-label">Password</label><br>
+              <label for="Password" class="form-label" style="font-size:12px;">Password must be at least 8 digits.
+                Must contain at least one special character.</label>
+              <input type="password" id="pw" class="form-control" name="pw" placeholder="********" required="">
+              <div class="invalid-feedback">
+                Password must be at least 8 digits.
+                Must contain at least one special character.
+              </div>
+            </div><br>
+
+            <!--이름-->
+            <div class="col-12">
+              <label for="name" class="form-label">name</label>
+              <div class="input-group has-validation">
+              <input type="text" id="name" class="form-control" name="name" value size="20" required="">
+              <div class="invalid-feedback">
+                  Your name is required.
+                </div>
+              </div>
+            </div><br>
+            
+
+            <!--주소-->
+            <div class="col-12">
+              <label for="address" class="form-label">Address <span class="text-muted">(Optional)</span></label>
+              <input type="text" id="address" class="form-control" name="Address" placeholder="">
+            </div>
+
+            <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">SIGN UP</button>
+          </div>
+        </form>
+        </div>
+      </div>
+     
+    </body>
+</html>

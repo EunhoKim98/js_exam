@@ -2,6 +2,8 @@ const express = require('express')
 const path = require('path')
 const favicon = require('serve-favicon')
 const libraryRouter = require('./routers/library')
+const session = require('express-session');
+const userControler = require('./controllers/user')
 
 const app = express()
 app.use('/static', express.static('public'))
@@ -16,6 +18,21 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
+app.get('/login', (req, res) => {
+    res.render('login')
+})
+
+app.get('/register', (req, res) => {
+    res.render('userRegister')
+})
+app.post('/register', userControler.registerUser)
+
+app.get('/logout', (req, res) => {
+    req.session.destroy();
+    alert('로그아웃 되었습니다.')
+})
+
+
 app.use((req, res, next) => {
     console.log(req.url)
     res.status(404).render('404', {
@@ -24,6 +41,6 @@ app.use((req, res, next) => {
 })
 
 app.listen(3000)
-
+console.log('success connection')
 
 
