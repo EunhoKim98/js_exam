@@ -118,29 +118,34 @@
                 <h3 class="float-md-start mb-0">GWNU Library</h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
                     <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="/">Home</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="/library">Library</a>
                     <a class="nav-link fw-bold py-1 px-0" href="/login">Login</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="/logout">Logout</a>
+                    <a class="nav-link fw-bold py-1 px-0" onclick=logout() >Logout</a>
                 </nav>
             </div>
         </header>
 
         <main class="px-3">
             <img src="/static/images/gwnu.png" alt="강릉원주대학교" style="border: 3px solid black;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;"><br><br>
-
+            <br>
             <p class="lead">
-                <a href="/library" class="btn btn-lg btn-secondary fw-bold border-white bg-white">GWNU Library</a>
+                <a href="/library" class="btn btn-lg btn-secondary fw-bold border-white bg-white">GWNU Library</a><br><br>
                 <a href="/login" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Login</a>
                 <a href="/register" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Register</a>
             </p><br>
             {{#if email}}
                 <script>
-                    sessionStorage.setItem('{{email}}', 'loggedIn');
+                    sessionStorage.setItem('login', '{{email}}');
                     alert('Login Success');
+                    window.location.href="/library";
                 </script>
             {{/if}}
         </main>
-
+        <script>
+            function logout(){
+                sessionStorage.removeItem('login');
+                alert("success logout!")
+            }
+        </script>
         <footer class="mt-auto text-white-50">
             <p>This is a web page for studying.</p>
         </footer>

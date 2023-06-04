@@ -28,11 +28,6 @@ app.get('/register', (req, res) => {
 })
 app.post('/register', userControler.registerUser)
 
-app.get('/logout', (req, res) => {
-    req.session.destroy();
-    alert('로그아웃 되었습니다.')
-})
-
 
 app.use((req, res, next) => {
     console.log(req.url)
